@@ -5,7 +5,7 @@
         <label class="block text-gray-700 text-sm font-bold mb-2" for="amount">
           Amount
         </label>
-        <input class="input" type="text" v-model.number="amount1" id="amount">
+        <input class="input w-full" type="text" v-model.number="amount1" id="amount">
       </div>
       <div class="relative ml-8 w-full">
         <label class="block text-gray-700 text-sm font-bold mb-2" for="from">
@@ -19,12 +19,19 @@
         </div>
       </div>
     </div>
+
+    <div class="my-8">
+      <button class="rounded-full shadow appearance-none border text-gray-700 leading-tight py-2 px-2">
+        <img class="w-6" :src="exchange"/>
+      </button>
+    </div>
+
     <div class="flex my-8">
       <div  class="w-full">
         <label class="block text-gray-700 text-sm font-bold mb-2" for="result">
           Result
         </label>
-        <input class="input bg-gray-300" type="text" v-model.number="amount2" id="result" disabled>
+        <input class="input bg-gray-300 w-full" type="text" v-model.number="amount2" id="result" disabled>
       </div>
       <div class="relative ml-8 w-full">
         <label class="block text-gray-700 text-sm font-bold mb-2" for="to">
@@ -43,6 +50,8 @@
 </template>
 
 <script>
+import exchange from "../assets/exchange.svg";
+
 export default {
   name: "Converter",
 
@@ -53,6 +62,7 @@ export default {
       currency1: "EUR",
       currency2: "USD",
       rates: {},
+      exchange,
     }
   },
 
@@ -105,6 +115,6 @@ export default {
 }
 
 .button {
-  @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded;
+  @apply bg-blue-800 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded;
 }
 </style>
