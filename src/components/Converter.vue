@@ -21,7 +21,7 @@
     </div>
 
     <div class="my-8">
-      <button class="rounded-full shadow appearance-none border text-gray-700 leading-tight py-2 px-2">
+      <button class="rounded-full shadow appearance-none border text-gray-700 leading-tight py-2 px-2" @click="switchFields">
         <img class="w-6" :src="exchange"/>
       </button>
     </div>
@@ -104,6 +104,16 @@ export default {
     convertCurrency() {
       const modifier = this.getModifier(this.currency1, this.currency2)
       this.amount2 = this.amount1 * modifier
+    },
+
+    switchFields() {
+      const tempAmount = this.amount1
+      this.amount1 = this.amount2
+      this.amount2 = tempAmount
+
+      const tempCurrency = this.currency1
+      this.currency1 = this.currency2
+      this.currency2 = tempCurrency
     }
   }
 }
