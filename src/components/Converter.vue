@@ -78,7 +78,7 @@ export default {
 
   methods: {
     getRatesFromApi() {
-      const url = "http://data.fixer.io/api/latest?access_key=741f1eb0acccfacf0da017d812c6d265&format=1"
+      const url = "https://data.fixer.io/api/latest?access_key=741f1eb0acccfacf0da017d812c6d265&format=1"
 
       fetch(url)
         .then(response => response.json())
